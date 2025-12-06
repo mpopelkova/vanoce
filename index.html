@@ -1,145 +1,86 @@
 <!DOCTYPE html>
-
 <html lang="cs">
-
 <head>
-
 <meta charset="UTF-8">
-
 <title>Vánoční dárek</title>
-
 <style>
-
    body { 
-
     font-family: Arial, sans-serif; 
-
-    background-image: url('https://i.ytimg.com/vi/tRhEp0T2_HA/hq720.jpg?sqp=-oaymwExCK4FEIIDSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYOCBlKEkwDw==&rs=AOn4CLDJ5bCTlJxAcuvEbkgLUwZEMJJDuQ'); /* sem dej URL obrázku */
-
-    background-size: cover;      /* obrázek pokryje celou plochu */
-
-    background-position: center; /* vycentrování obrázku */
-
+    background-image: url('https://i.ytimg.com/vi/tRhEp0T2_HA/hq720.jpg?sqp=-oaymwExCK4FEIIDSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYOCBlKEkwDw==&rs=AOn4CLDJ5bCTlJxAcuvEbkgLUwZEMJJDuQ'); 
+    background-size: cover;      
+    background-position: center; 
     background-repeat: no-repeat; 
-
-    color: #fff;                 /* text bude bílý, aby byl čitelný */
-
+    color: #fff;                 
     display: flex; 
-
     flex-direction: column; 
-
     align-items: center; 
-
     justify-content: center; 
-
     min-height: 100vh; 
-
     margin: 0; 
-
     padding: 20px; 
-
 }
-
-    h1 { color: #fff; }
-
-    input { padding: 10px; font-size: 25px; margin-top: 10px; }
-
-    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; cursor: pointer; background-color: #2e7d32; color: white; border: none; border-radius: 4px; }
-
-    button:hover { background-color: #1b5e20; }
-
-    #poukaz { display: none; max-width: 1000px; margin-top: 20px; background: #000; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
-
-    #chyba { color: red; margin-top: 15px; }
-
-    #odkazHra { display: none; margin-top: 20px; padding: 10px 20px; font-size: 16px; background-color: #17320b; color: white; border: none; border-radius: 4px; text-decoration: none; }
-
-    #odkazHra:hover { background-color: #17320b; }
-
+h1 { color: #fff; }
+input { padding: 10px; font-size: 25px; margin-top: 10px; }
+button { padding: 10px 20px; font-size: 16px; margin-top: 10px; cursor: pointer; background-color: #2e7d32; color: white; border: none; border-radius: 4px; }
+button:hover { background-color: #1b5e20; }
+#poukaz, #poukazRover { display: none; max-width: 1000px; margin-top: 20px; background: #000; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+#chyba { color: red; margin-top: 15px; }
+#odkazHra, #odkazRover { display: none; margin-top: 20px; padding: 10px 20px; font-size: 16px; background-color: #17320b; color: white; border: none; border-radius: 4px; text-decoration: none; }
+#odkazHra:hover, #odkazRover:hover { background-color: #17320b; }
 </style>
-
 </head>
-
 <body>
 
-
-
 <h1>Vánoční dárek pro skautky 🌿🗝️</h1>
-
 <p>Zadejte tajné slovo, abyste odemkly svůj dárek:</p>
-
 <input type="text" id="tajneSlovo" placeholder="Zadejte slovo...">
-
 <button onclick="overit()">Odemknout</button>
-
 <div id="chyba"></div>
 
-
-
+<!-- Pro skautky -->
 <div id="poukaz">
-
-<p>Nazdar! 🌿🗝️</p>
-
-<p>Asi koukáte, co je tohle za vánoční dárek. Tak čtěte dál. Naše květnová výprava nebude jen tak obyčejná! Tentokrát se vydáme na misi přímo do Prahy, kde na nás čeká něco trochu jiného - jdete do escape místnosti Wonderland.</p>
-
-<p>Ano, slyšíte správně. Nejde jen o hory a lesy, tentokrát se ponoříte do kouzelného a šíleného světa, kde je všechno trochu jiné, než jste zvyklé. Čekají vás hádanky, záhady a úkoly, které budete muset vyřešit společně. Každý nápad i každá nápověda bude důležitá.</p>
-
-<p>Traduje se, že vedle světa jak ho známe existuje ještě jedna, skrytá dimenze – Wonderland. Je to svět vytvářený fantazií všech živých bytostí, od dětí, přes dospělé až třeba i zvířata schopná představivosti. Na světě je jen několik málo portálů, skrz které lze do tohoto tajemného světa vkročit<p><p>Naštěstí pro nás, jeden z těchto portálů byl odhalen v Praze nedaleko Anděla. Traduje se že název dostala tato část města právě na základě historických svědectví podivných, avšak na první pohled dobrých a vřelých bytostí.<p>
-
-<p>I my v The Chamber jsme měli to štěstí se s jednou takovou bytostí potkat. Na základě naší krátké interakce s ní jsme však pojali podezření, že s Wonderlandem je něco v nepořádku. Ačkoli již víme jak portál použít a projít skrz něj, nemáme dost odvahy tak učinit.<p>
-
-<p>Najdete odvahu se do Wonderlandu vydat a zachránit ho před zjevným nebezpečím které mu hrozí?.</p>
-
-<p>Připravte hlavy, oči a hlavně týmového ducha. Čekají na vás hádanky, které prověří váš důvtip, a situace, kde bude potřeba rychle reagovat a spolupracovat. Ale nebojte se — společně to zvládnete.</p>
-
-<p>Připravte se, družino, budeme držet palce!</p>
-
-
-
-<a id="odkazHra" href="https://thechamber.cz/wonderland-2/" target="_blank">Jít na stránku hry Wonderland</a>
-
+  <p>Nazdar! 🌿🗝️</p>
+  <p>Asi koukáte, co je tohle za vánoční dárek. ...</p>
+  <a id="odkazHra" href="https://thechamber.cz/wonderland-2/" target="_blank">Jít na stránku hry Wonderland</a>
 </div>
 
-
+<!-- Pro rovery -->
+<div id="poukazRover">
+  <p>Ahojky,</p>
+  <p>doufám, že jste se pečlivě seznámily s historií města Dubí. ...</p>
+  <a id="odkazRover" href="https://thechamber.cz/" target="_blank">Vybrat únikovku</a>
+</div>
 
 <script>
-
 function overit() {
-
     var slovo = document.getElementById('tajneSlovo').value.trim().toUpperCase();
-
     var poukaz = document.getElementById('poukaz');
-
+    var poukazRover = document.getElementById('poukazRover');
     var chyba = document.getElementById('chyba');
-
     var odkaz = document.getElementById('odkazHra');
-
-
+    var odkazRover = document.getElementById('odkazRover');
 
     if(slovo === "WONDERLAND") {
-
         poukaz.style.display = 'block';
-
         odkaz.style.display = 'inline-block';
-
+        poukazRover.style.display = 'none';
+        odkazRover.style.display = 'none';
         chyba.textContent = '';
-
-    } else {
-
+    } else if(slovo === "YOUCHOOSE") {
+        poukazRover.style.display = 'block';
+        odkazRover.style.display = 'inline-block';
         poukaz.style.display = 'none';
-
         odkaz.style.display = 'none';
-
+        chyba.textContent = '';
+    } else {
+        poukaz.style.display = 'none';
+        odkaz.style.display = 'none';
+        poukazRover.style.display = 'none';
+        odkazRover.style.display = 'none';
         chyba.textContent = 'špatně';
-
     }
-
 }
-
 </script>
 
-
-
 </body>
-
 </html>
